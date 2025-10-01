@@ -1,0 +1,101 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    overflow: hidden;
+    padding: 8px;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: flex-end;
+
+    background-color: #30343f;
+    /* background-color: #ccc; */
+}
+
+#overlay {
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 400px;
+
+    padding: 4px;
+    padding-right: 16px;
+    border-radius: 100px;
+    background-color: #0008;
+}
+
+#timer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+}
+
+#tick-marks,
+#timer-bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#encryption-icon {
+    position: absolute;
+    width: 80px;
+    filter: drop-shadow(0px 0px 16px #000);
+}
+
+#encryption-count {
+    position: absolute;
+    font-size: 26px;
+    font-weight: 700;
+    color: #eee;
+    margin-top: 40px;
+    margin-left: 48px;
+    text-shadow: -4px -4px 16px #000;
+}
+
+#counter {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+#score {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fffd;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 8px #fff8;
+}
+
+#clock,
+#score-lost {
+    font-size: 26px;
+    font-weight: 500;
+    color: #fff8;
+    font-variant-numeric: tabular-nums;
+    margin-left: -4px;
+    text-shadow: 0 0 4px #fff4;
+}
+
+#status {
+    position: absolute;
+    font-weight: 700;
+    color: #f44;
+    bottom: 0;
+    padding: 4px 8px;
+    background-color: #0006;
+    border-radius: 4px;
+}
