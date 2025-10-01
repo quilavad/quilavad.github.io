@@ -2,4 +2,4 @@
 
 Hello!
 
-[TNHScoreBreakdown](quilavad.github.io/scoreBreakdown.html)
+[TNHScoreBreakdown](scoreBreakdown.html)
