@@ -25,7 +25,7 @@ namespace H3Status.Patches
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(SteamVR_LoadLevel), nameof(SteamVR_LoadLevel.Begin))]
-        private static void LoadLevel(string levelName)
+        private static void SceneEvent(string levelName)
         {
             activeScene = levelName;
 
@@ -64,7 +64,7 @@ namespace H3Status.Patches
 
             levelEventJSON["type"] = "TNHLevelEvent";
             var levelJSON = levelEventJSON["status"].AsObject;
-            levelJSON["seed"] = __instance.m_seed;
+            levelJSON["seed"] = __instance.m_holdSequenceSeed;
             levelJSON["levelName"] = __instance.LevelName;
             levelJSON["characterName"] = __instance.C.DisplayName;
             levelJSON["scoreMultiplier"] = TNHScoreHandler.GetMultiplier();
@@ -88,7 +88,7 @@ namespace H3Status.Patches
             phaseJSON["phase"] = p.ToString();
             phaseJSON["level"] = __instance.m_level;
             phaseJSON["count"] = __instance.m_maxLevels;
-            phaseJSON["seed"] = __instance.m_seed;
+            phaseJSON["seed"] = __instance.m_holdSequenceSeed;
             phaseJSON["hold"] = __instance.m_curHoldIndex;
             var supplyPointsJSON = phaseJSON["supply"].AsArray;
             foreach(int i in __instance.m_activeSupplyPointIndicies)
